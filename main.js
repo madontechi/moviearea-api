@@ -1,5 +1,6 @@
 import express from "express";
 import movieRoutes from "./routes/movies_route.js"
+import connectDB from "./contollers/db.js";
 
 const app = express()
 const PORT = 6969;
@@ -8,13 +9,12 @@ app.get('/', (req,res)=>{
    res.json({ msg:"hello from student!!"});
 });
 
-
-// CRUD functionality of movie
-
+//connect db
+connectDB();
 
 // client -> middleware -> server
-//?MiddleWares 
 
+//?MiddleWares 
 app.use('/movies',movieRoutes);
 
 app.listen(PORT,()=>{
