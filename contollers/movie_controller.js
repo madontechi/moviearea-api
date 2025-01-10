@@ -10,7 +10,7 @@ export const MovieCreate = async (req,res)=>{
 //validate your data
 const newMovie = new Movie({
     title: req.body.title,
-    desc: req.body.description,
+    desc: req.body.desc,
 });
 
    try {
